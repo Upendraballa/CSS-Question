@@ -1,0 +1,71 @@
+body {
+    /* Set "my-sec-counter" to 0 */
+    counter-reset: my-sec-counter;
+}
+h2::before {
+    /* Increment "my-sec-counter" by 1 */
+    counter-increment: my-sec-counter;
+    content: counter(my-sec-counter, upper-roman) ". ";
+}
+li::before{
+	content: "\2022"; /*unicode number for .=2022 */
+	color: red;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+}
+::placeholder{
+	color: blue; /*applying a color to placeholder*/
+}
+h1{ /*applying color to half of character*/
+	display: inline-block;
+	background: linear-gradient(to left,red 50%,green 50%);
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+	cursor: pointer; /*cursor hand hover a character*/
+}
+/*align content of div at bottom*/
+#header {
+  position: relative;
+  min-height: 150px;
+}
+
+#header-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#header, #header * {
+  background: rgba(40, 40, 100, 0.25);
+}
+/*add html entity for css conent*/
+h4:after{
+	content: '\00A7';
+}
+/*disabled link using css*/
+.disabled {
+  pointer-events: none;
+}
+/*apply style to checkbox*/
+input[type="checkbox"]{
+	-webkit-appearance:none;
+	width: 16px;
+	height: 16px;
+	background: pink;
+}
+/*remove outline using css*/
+input {
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    width: 160px;
+    color: #CCC;
+}
+.noselect{
+	-webkit-user-select:none; /* disable text selection*/
+}
+/*hide scrollbar*/
+::-webkit-scrollbar { 
+    display: none; 
+}
